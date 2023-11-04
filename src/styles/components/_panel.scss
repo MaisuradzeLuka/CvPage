@@ -1,0 +1,68 @@
+.panel {
+  width: 250px;
+  height: 100vh;
+  background-color: $darkBlue;
+  left: 0;
+  padding: 20px 0;
+  transition: 0.5s ease;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__hamburger {
+    color: #fff;
+    position: absolute;
+    top: 30px;
+    right: -40px;
+    background-color: $darkBlue;
+    padding: 7px;
+    border-radius: 3px;
+    z-index: 999;
+  }
+
+  &__hamburger:hover {
+    background-color: $darkBlue;
+  }
+
+  // &__btn {
+  //   margin: 0 auto;
+  //   position: absolute;
+  //   bottom: 15px;
+  //   left: 50%;
+  //   transform: translate(-50%);
+  // }
+}
+
+.panel--colapsed {
+  left: -250px;
+}
+
+@media (max-width: 600px) {
+  .panel {
+    width: 70px;
+    img {
+      width: 50px;
+      height: 50px;
+      border-width: 2px;
+    }
+
+    .photoBox__body {
+      display: none;
+    }
+
+    button span {
+      display: none;
+    }
+  }
+
+  .panel--colapsed {
+    left: -70px;
+  }
+}

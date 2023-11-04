@@ -1,0 +1,41 @@
+.timeLine {
+  margin: 30px 0;
+  display: flex;
+  gap: 30px;
+
+  &__date {
+    margin-top: 30px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 100%;
+      top: 35px;
+      left: 50%;
+      background-color: $darkGreen;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: $lightGrey;
+    padding: 15px;
+    border-radius: 2px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 35px;
+      left: -8px;
+      background-color: $lightGrey;
+      rotate: 45deg;
+    }
+  }
+}

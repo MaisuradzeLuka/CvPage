@@ -1,0 +1,17 @@
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__icon {
+    color: $darkGreen;
+    animation: rotateLoading 1s linear infinite;
+  }
+}
+
+@keyframes rotateLoading {
+  100% {
+    rotate: 180deg;
+  }
+}

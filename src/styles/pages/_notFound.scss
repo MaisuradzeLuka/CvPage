@@ -1,0 +1,16 @@
+.dialog {
+  background-color: #c5c4c4;
+  color: #000;
+  padding: 30px 50px;
+  max-width: 600px;
+  border: none;
+  margin: 200px auto;
+
+  &__para {
+    margin: 20px 0;
+  }
+
+  &__link {
+    color: #0000ee;
+  }
+}

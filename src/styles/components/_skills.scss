@@ -1,0 +1,78 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  &__form {
+    border: 1px solid $darkGreen;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__skill {
+      height: 30px;
+      background-color: $darkGreen;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    &__skillsLvl {
+      height: 10px;
+      border: 1px solid $grey;
+      border-top: none;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 1px;
+        background-color: $grey;
+        bottom: 0;
+        left: 20%;
+      }
+
+      &:after {
+        left: auto;
+        right: 20%;
+      }
+    }
+    &__skillsLvlName {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      font-size: 12px;
+      color: $grey;
+
+      :nth-child(2) {
+        position: absolute;
+        left: calc(20% - 25px);
+      }
+
+      :nth-child(3) {
+        position: absolute;
+        right: calc(20% - 20px);
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .skills__body__skillsLvlName {
+    display: none;
+  }
+}

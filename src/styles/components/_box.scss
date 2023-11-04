@@ -1,0 +1,13 @@
+.box {
+  width: 100%;
+  color: $darkBlue;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__paragraph {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

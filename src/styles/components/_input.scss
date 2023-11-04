@@ -1,0 +1,29 @@
+.input {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+
+  &__input {
+    width: 270px;
+    height: 40px;
+    border: 1px solid $grey;
+    border-radius: 5px;
+    color: $grey;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+
+    &__error {
+      border-color: #dc143c;
+      color: #dc143c;
+    }
+  }
+
+  &__errTxt {
+    color: #dc143c;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+  }
+}

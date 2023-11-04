@@ -1,0 +1,75 @@
+.cvMain {
+  padding: 40px;
+  transition: 0.5s ease;
+  margin-left: 250px;
+
+  section {
+    padding: 40px 0;
+  }
+
+  h2 {
+    color: $darkGreen;
+    margin-bottom: 40px;
+  }
+
+  &__aboutMe {
+    padding-top: 0 !important;
+    h3 {
+      color: $darkGreen;
+      font-size: 25px;
+    }
+  }
+
+  &__education {
+    height: 80vh;
+    overflow-y: scroll;
+  }
+
+  .skills__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+.cvMain--wide {
+  margin-left: 0;
+}
+
+.cvWrapper {
+  display: flex;
+
+  .scrollToTop {
+    position: fixed;
+    bottom: -15px;
+    right: 100px;
+    padding: 5px 10px;
+  }
+}
+
+.error {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff0000;
+}
+
+@media (max-width: 600px) {
+  .panelWrapper {
+    width: fit-content;
+  }
+
+  .cvMain {
+    margin-left: 70px;
+  }
+
+  .cvMain--wide {
+    margin-left: 0;
+  }
+}
