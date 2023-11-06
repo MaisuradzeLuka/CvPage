@@ -216,6 +216,16 @@ textarea:not([rows]) {
   color: #fff;
   font-size: 12px;
   letter-spacing: 1px;
+  justify-content: space-between;
+}
+.skills__body__skill button {
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(102, 112, 129);
+  border: none;
+}
+.skills__body__skill button:hover {
+  color: #dc143c;
 }
 .skills__body__skillsLvl {
   height: 10px;
@@ -608,6 +618,11 @@ textarea:not([rows]) {
 .cvMain__education {
   height: 80vh;
   overflow-y: scroll;
+}
+.cvMain__experience {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 .cvMain .skills__header {
   display: flex;

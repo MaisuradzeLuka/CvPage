@@ -5,10 +5,16 @@ import * as Yup from "yup";
 import { Formik, Form, FormikHelpers } from "formik";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import {
-  fetchSkillsData,
+  changeSkillsData,
+  deleteSkills,
   postSkillsData,
 } from "../features/skills/skillsSlice";
 import { toast } from "react-toastify";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../services/ConnectToDB";
+import { ISkill } from "../interfaces";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IInitialValues {
   skill: string;
@@ -39,6 +45,7 @@ const Skills = ({ showSkills }: { showSkills: boolean }) => {
         position: "top-center",
         autoClose: 3000,
         theme: "dark",
+        delay: 100,
       });
     } else {
       toast.info("Skill already exists in the list", {
@@ -51,9 +58,21 @@ const Skills = ({ showSkills }: { showSkills: boolean }) => {
     resetForm();
   };
 
+  const handleDelete = async (id: string) => {
+    dispatch(deleteSkills(id));
+  };
+
   useEffect(() => {
-    dispatch(fetchSkillsData());
-  }, []);
+    onSnapshot(collection(db, "skills"), (snapshots) => {
+      const data: ISkill[] = [];
+
+      snapshots.forEach((snapshot) => {
+        data.push({ ...snapshot.data(), id: snapshot.id } as ISkill);
+      });
+
+      dispatch(changeSkillsData(data));
+    });
+  }, [dispatch]);
 
   return (
     <div className="skills">
@@ -96,6 +115,9 @@ const Skills = ({ showSkills }: { showSkills: boolean }) => {
                       style={{ width: `${+skill.range}%` }}
                     >
                       {skill.skill}
+                      <button onClick={() => handleDelete(skill.id)}>
+                        <FontAwesomeIcon icon={faTrash} size="lg" />
+                      </button>
                     </div>
                   );
                 })}

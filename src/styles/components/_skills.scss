@@ -27,6 +27,18 @@
       color: #fff;
       font-size: 12px;
       letter-spacing: 1px;
+      justify-content: space-between;
+
+      button {
+        cursor: pointer;
+        background-color: transparent;
+        color: $grey;
+        border: none;
+      }
+
+      button:hover {
+        color: #dc143c;
+      }
     }
 
     &__skillsLvl {

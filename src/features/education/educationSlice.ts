@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { IEducation } from "../../interfaces";
-import fetchData from "../../utils/fetchData";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../services/ConnectToDB";
 
 interface IInitialState {
   loading: boolean;
@@ -18,7 +19,12 @@ export const fetchEducationData = createAsyncThunk(
   "get/education",
   async () => {
     try {
-      const data = fetchData("/api/educations");
+      const querySnapshot = await getDocs(collection(db, "education"));
+      const data: IEducation[] = [];
+      querySnapshot.forEach((doc) => {
+        data.push({ ...doc.data() } as IEducation);
+      });
+
       return data;
     } catch (error) {
       throw new Error(`Something went wrong: ${error}`);
@@ -35,11 +41,12 @@ export const educationSlice = createSlice({
       .addCase(fetchEducationData.pending, (state) => {
         state.loading = true;
       })
+
       .addCase(
         fetchEducationData.fulfilled,
-        (state, action: PayloadAction<{ educations: IEducation[] }>) => {
+        (state, action: PayloadAction<IEducation[]>) => {
           state.loading = false;
-          state.educationData = action.payload.educations;
+          state.educationData = action.payload;
         }
       )
       .addCase(fetchEducationData.rejected, (state) => {

@@ -25,6 +25,12 @@
     overflow-y: scroll;
   }
 
+  &__experience {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
   .skills__header {
     display: flex;
     align-items: center;

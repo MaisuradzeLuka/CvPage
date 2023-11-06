@@ -84,7 +84,7 @@ const CvPage = () => {
             </div>
           </section>
 
-          <section id="experience">
+          <section id="experience" className="cvMain__experience">
             <h2>Experience</h2>
             {experienceData.map((elem) => (
               <Experience {...elem} key={elem.id} />

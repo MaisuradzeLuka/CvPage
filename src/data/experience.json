@@ -1,20 +1,29 @@
 [
   {
-    "date": "2013-2014",
+    "date": "2022",
     "info": {
-      "company": "Google",
-      "job": "Front-end developer / php programmer",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolorLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolorLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolorLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolorLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor"
+      "company": "Bitcamp",
+      "job": "Front-end developer",
+      "description": "Complteted Bitcamp's starter course (general programmer) and stage 1 (begginer web-developer: Html, Css and jacascript)"
     },
-    "id": "google"
+    "id": "bitcamp"
   },
   {
-    "date": "2012",
+    "date": "2022-2023",
     "info": {
-      "company": "Twitter",
-      "job": "Web developer",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor"
+      "company": "Contests",
+      "job": "Web dveloper",
+      "description": "Participated in Redberry and Bitcamp contests which gave me lots of experience"
     },
-    "id": "twitter"
+    "id": "contests"
+  },
+  {
+    "date": "2023",
+    "info": {
+      "company": "Epam",
+      "job": "Front-end dveloper",
+      "description": "Completed Epam learning program with high score"
+    },
+    "id": "epam"
   }
 ]
