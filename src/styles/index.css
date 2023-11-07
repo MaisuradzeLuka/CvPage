@@ -545,7 +545,7 @@ textarea:not([rows]) {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  width: 250px;
+  max-width: 250px;
   background-color: transparent;
 }
 .contacts__link {
@@ -570,6 +570,12 @@ textarea:not([rows]) {
   font-weight: 600;
 }
 
+@media (max-width: 450px) {
+  .contacts__link {
+    font-size: 13px;
+    gap: 10px;
+  }
+}
 .welcome {
   background-image: url("/public/backgrounds/background.png");
   background-repeat: no-repeat;
@@ -663,9 +669,13 @@ textarea:not([rows]) {
   }
   .cvMain {
     margin-left: 70px;
+    padding: 30px;
   }
   .cvMain--wide {
     margin-left: 0;
+  }
+  .scrollToTop {
+    right: 20px !important;
   }
 }
 .dialog {
